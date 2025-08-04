@@ -1,1 +1,15 @@
-<p>dashboard component .. !</p>
+<h3>Dashboard Works!</h3>
+<button  class="btn btn-warning" >
+    <a (click)="test()">Logout</a>
+</button>
+<div class="dashboard-layout">
+    <div class="box box1" >
+        <a class="box box1" routerLink="/tiffins">Tiffins</a>
+    </div>
+    <div class="box box2"  >
+        <a (click)="goToLunch()">Lunch</a>
+        </div>
+    <div class="box box3" routerLink="/snacks">Snacks</div>
+    <div class="box box" routerLink="/404" [queryParams]="{ meal: 'non-veg', time: 'mid-night' }">Dinner</div>
+    <button (click)="test()"> Test</button>
+</div>

@@ -4,20 +4,56 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TiffinsComponent } from './tiffins/tiffins.component';
 import { registerLocaleData } from '@angular/common';
 import { RegistrationComponent } from './registration/registration.component';
-
+import { LunchComponent } from './lunch/lunch.component';
+import { AuthServiceGuard } from './auth/auth-service.guard';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { SnacksComponent } from './snacks/snacks.component';
+import { DinnerComponent } from './dinner/dinner.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EmployeeComponent } from './employee/employee.component';
 const routes: Routes = [
   {
     path:'dashboard',
-    component:DashboardComponent
+    component:DashboardComponent,
+    canActivate:[AuthServiceGuard]
+
   },
   {
     path:'tiffins',
-    component:TiffinsComponent
+    component:TiffinsComponent,
+    canActivate:[AuthServiceGuard]
+
   },{
     path:'registration',
     component:RegistrationComponent
-  }
-];
+  },{
+      path: 'lunch',
+      component: LunchComponent,
+      canActivate:[AuthServiceGuard]
+    },{
+      path:'login',
+      component:LoginPageComponent
+    },{
+      path:'snacks',
+      component:SnacksComponent,
+      canActivate:[AuthServiceGuard]
+    },{
+      path:'dinner',
+      component:DinnerComponent,
+      canActivate:[AuthServiceGuard]
+    },{
+      path:'404',
+      component: PageNotFoundComponent
+    },{
+      path:'employee',
+      component:EmployeeComponent,
+      canActivate:[AuthServiceGuard]
+    },
+    {
+      path:'**',
+      redirectTo: '404'
+    }
+     ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

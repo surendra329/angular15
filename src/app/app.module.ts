@@ -10,6 +10,12 @@ import { RegistrationComponent } from './registration/registration.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LunchComponent } from './lunch/lunch.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { SnacksComponent } from './snacks/snacks.component';
+import { DinnerComponent } from './dinner/dinner.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 @NgModule({
@@ -17,7 +23,13 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     DashboardComponent,
     TiffinsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LunchComponent,
+    LoginPageComponent,
+    SnacksComponent,
+    DinnerComponent,
+    PageNotFoundComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,

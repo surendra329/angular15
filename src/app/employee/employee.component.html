@@ -1,0 +1,19 @@
+<p>employee List!</p>
+
+<input type="button" name="" id="" value="getCall" > get
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>City</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let item of employees">
+    <td>{{ item.name }}</td>
+    <td>{{ item.mobile }}</td>
+    <td>{{ item.city }}</td>
+    <td>{{ item.email }}</td>
+    <td (click)="updateEmployee(item)">Update</td>
+  </tr>
+</table>

@@ -1,0 +1,42 @@
+<div class="container login-page d-flex justify-content-center align-items-center loginPad ">
+  <div class="col-md-6 col-lg-4 p-4">
+    </div>
+  <div class="col-md-6 col-lg-4 p-4 rounded shadow-lg bg-white loginForm">
+    <h2 class="text-center mb-4">Login Page</h2>
+
+    <form (ngSubmit)="loginForm()">
+      <div class="form-group mb-3">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          placeholder="Enter your name"
+          [(ngModel)]="loginObj.name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          placeholder="Enter your password"
+          [(ngModel)]="loginObj.password"
+          name="password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+
+      <span class="text-center d-block mt-3 col-lg-12 mt-10">
+        Don't have an account? <a routerLink="/registration" >Register</a>
+        </span>
+    </form>
+  </div>
+</div>
+
