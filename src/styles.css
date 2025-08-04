@@ -4,3 +4,8 @@
     width: 100%;
     height:100%;
 }
+.mat-typography{
+    overflow: hidden !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

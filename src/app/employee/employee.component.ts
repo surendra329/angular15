@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from '../app.service';
+import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -30,5 +31,17 @@ public employees: any[] = [];
       // }).subscribe(res => {
       //   console.log('Update success', res);
       // });
+  }
+
+   displayedColumns: string[] = ['name', 'email'];
+  dataSource = new MatTableDataSource([
+    { name: 'Surendra', email: 'surendra@example.com' },
+    { name: 'Aisha', email: 'aisha@example.com' },
+  ]);
+
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 }

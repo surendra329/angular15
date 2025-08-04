@@ -16,7 +16,12 @@ import { SnacksComponent } from './snacks/snacks.component';
 import { DinnerComponent } from './dinner/dinner.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EmployeeComponent } from './employee/employee.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,13 @@ import { EmployeeComponent } from './employee/employee.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,//for ngModel [(ngModel)]
-    HttpClientModule //for Http services 
+    HttpClientModule, 
+    BrowserAnimationsModule, //for Http services 
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,8 +7,9 @@ import { Observable } from 'rxjs';
 
 export class AppService {
 
- private Mongo_URL = 'mongodb+srv://surendra1006:welcomeToDB@mycluster.92nm0lu.mongodb.net/?retryWrites=true&w=majority&appName=myCluster';
+//  private Mongo_URL = 'mongodb+srv://surendra1006:welcomeToDB@mycluster.92nm0lu.mongodb.net/?retryWrites=true&w=majority&appName=myCluster';
   private URL: string = 'https://dummyjson.com/users';
+  private Employee_URL = 'http://localhost:5000/employees';
   constructor(private http: HttpClient) { }
 
   getUsers(limit:number=30):Observable<any> {
@@ -16,12 +17,12 @@ export class AppService {
     return this.http.get<any>(`${this.URL}?limit=${limit}`);
   }
    addEmployee(employeeData: any): Observable<any> {
-   return this.http.post('http://localhost:5000/employees/add-emp', employeeData)
+   return this.http.post(`${this.Employee_URL}+/add-emp`, employeeData)
   }
   getEmployees():Observable<any>{
-    return this.http.get('http://localhost:5000/employees/allemployees')
+    return this.http.get(`${this.Employee_URL}/allemployees`)
   }
   updateEmployee(id:string,data:any):Observable<any>{
-    return this.http.put(`http://localhost:5000/employees/update/${id}`,data)
+    return this.http.put(`${this.Employee_URL}/update/${id}`,data)
   }
 }
