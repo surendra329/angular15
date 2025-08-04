@@ -1,28 +1,65 @@
-<p>registration works!</p>
+<div id="toast-container" class="toast-top-right toast-container">
+</div>
 
-<form action="" (ngSubmit)="submitForm()">
-    <label for="name">Name</label>
-        <input type="text" name="name" id="name" [(ngModel)]="name">
-    <label for="mobile">Mobile</label>
-        <input type="number" name="number" [(ngModel)]="mobileNumber">
+<div class="container login-page d-flex justify-content-center align-items-center loginPad ">
+  <div class="col-md-6 col-lg-4 p-4">
+    </div>
+  <div class="col-md-6 col-lg-4 p-4 rounded shadow-lg bg-white loginForm">
+    <h2 class="text-center mb-4">Register Page</h2>
 
-    <input type="submit" name="submit" id="" value="submit">
-</form>
+    <form (ngSubmit)="addEmployee()">
+      <div class="form-group mb-3">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          placeholder="Enter your name"
+          [(ngModel)]="loginObj.name"
+          name="name"
+          required
+        />
+      </div>
 
-<button (click)="getEmployees()"> Get Employees</button>
+      <div class="form-group mb-4">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="Enter your password"
+          [(ngModel)]="loginObj.email"
+          name="email"
+        />
+      </div>
+       <div class="form-group mb-4">
+        <label for="mobile">Mobile</label>
+        <input
+          type="mobile"
+          id="mobile"
+          class="form-control"
+          placeholder="Enter your password"
+          [(ngModel)]="loginObj.mobile"
+          name="mobile"
+        />
+      </div>
+       <div class="form-group mb-4">
+        <label for="city">City</label>
+        <input
+          type="text"
+          id="city"
+          class="form-control"
+          placeholder="Enter your password"
+          [(ngModel)]="loginObj.city"
+          name="city"
+        />
+      </div>
 
-<table *ngIf="employeeList.length !=0 ">
-    <tr>
-        <th>Name</th>
-        <th>Mobile</th>
-        <th>Email</th>
-        <th>City</th>
-    </tr>
-    <tr *ngFor="let item of employeeList">
-        <td>{{item.name}}</td>
-        <td>{{item.mobile}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.city}}</td>
-    </tr>
+      <button type="submit" class="btn btn-primary w-100">Regster</button>
 
-</table>
+    
+    </form>
+  </div>
+</div>
+
+

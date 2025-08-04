@@ -13,17 +13,35 @@ export class RegistrationComponent {
   public employeeList:any=[];
 constructor(private service:AppService,private http:HttpClient){}
 
-  submitForm(){
-    let params = {name:this.name,mobile:this.mobileNumber}
-    console.log(params);
-  }
+public loginObj = {
+    name: '',
+    email: '',
+    mobile:'',
+    city:''
+  };
+  // ngOnInit(){
+  //   this.toastr.success('Registered saved successfully!', 'Success');
+  // }
+  addEmployee(){
+    
+    this.loginObj.name = this.loginObj.name.trim();
+    this.loginObj.email = this.loginObj.email.trim();
+    this.loginObj.mobile = this.loginObj.mobile;
+    this.loginObj.city = this.loginObj.city;
 
-  getEmployees(){
-    this.service.getEmployee().subscribe(data => {
-      console.log(data);
-      this.employeeList = data;
+    this.service.addEmployee(this.loginObj).subscribe({
+      next: (res) => {
+        console.log(res);
+        // this.toastr.success('Registered saved successfully!', 'Success');
+        // this.router.navigate(['./login']);
+
+      },
+      error: (error) => {
+        // this.toastr.error(error?.message, 'Error ');
+
+        console.log(error);
+      }
     });
   }
-
 
 }
