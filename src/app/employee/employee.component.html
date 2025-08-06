@@ -1,40 +1,38 @@
-<p>employee List!</p>
 
-<input type="button" name="" id="" value="getCall" > get
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Mobile</th>
-    <th>City</th>
-    <th>Email</th>
-  </tr>
-  <tr *ngFor="let item of employees">
-    <td>{{ item.name }}</td>
-    <td>{{ item.mobile }}</td>
-    <td>{{ item.city }}</td>
-    <td>{{ item.email }}</td>
-    <td (click)="updateEmployee(item)">Update</td>
-  </tr>
-</table>
-
-
-<mat-form-field>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Search">
-</mat-form-field>
-
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="email">
-    <th mat-header-cell *matHeaderCellDef> Email </th>
-    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<div class="table-wrapper">
+  <table class="table my-table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">City</th>
+        <th scope="col">Email</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of employees">
+      <td scope="row">{{ item.name }}</td>
+      <td scope="row">{{ item.mobile }}</td>
+      <td scope="row">{{ item.city }}</td>
+      <td scope="row">{{ item.email }}</td>
+      <td scope="row" (click)="updateEmployee(item)">Update</td>
+    </tr>
+    </tbody>
+  </table>
+<!-- <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr> -->
+</div>

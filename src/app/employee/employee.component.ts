@@ -33,15 +33,4 @@ public employees: any[] = [];
       // });
   }
 
-   displayedColumns: string[] = ['name', 'email'];
-  dataSource = new MatTableDataSource([
-    { name: 'Surendra', email: 'surendra@example.com' },
-    { name: 'Aisha', email: 'aisha@example.com' },
-  ]);
-
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
-    this.dataSource.filter = filterValue;
-  }
 }

@@ -13,10 +13,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { EmployeeComponent } from './employee/employee.component';
 const routes: Routes = [
   {
+    path:'',redirectTo:'dashboard',pathMatch:'full'
+  },
+  {
     path:'dashboard',
     component:DashboardComponent,
     canActivate:[AuthServiceGuard]
-
+    
   },
   {
     path:'tiffins',
