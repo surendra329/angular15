@@ -9,13 +9,24 @@ import { MatTableDataSource } from '@angular/material/table';
 export class EmployeeComponent {
 
 public employees: any[] = [];
-
+public searchTable:string = '';
   constructor(private service: AppService) {}
 
   ngOnInit(): void {
     this.service.getEmployees().subscribe(data => {
       this.employees = data;
     });
+  }
+  get filteredEmployees() {
+    if (!this.searchTable) return this.employees;
+
+    const term = this.searchTable.toLowerCase();
+
+    return this.employees.filter(emp =>
+      Object.values(emp).some(val =>
+        String(val).toLowerCase().includes(term)
+      )
+    );
   }
   updateEmployee(record:any){
     console.log(record);

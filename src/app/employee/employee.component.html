@@ -1,5 +1,8 @@
-
-<div class="table-wrapper">
+<div class="form-group form-group col-lg-3 col-sm-12 col-xs-12 pull-right">
+  <label for="search">Search:</label>
+  <input type="text" class="form-control" id="search" [(ngModel)]="searchTable" placeholder="Enter search">
+</div>
+<div class="table-wrapper col-lg-12">
   <table class="table my-table">
     <thead>
       <tr>
@@ -10,7 +13,7 @@
       </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of employees">
+    <tr *ngFor="let item of filteredEmployees">
       <td scope="row">{{ item.name }}</td>
       <td scope="row">{{ item.mobile }}</td>
       <td scope="row">{{ item.city }}</td>
