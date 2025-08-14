@@ -23,6 +23,9 @@ export class AppService {
   getEmployees():Observable<any>{
     return this.http.get(`${this.Employee_URL}/allemployees`)
   }
+  getEmployeesPro(){
+    return this.http.get(`${this.Employee_URL}/allemployees`)
+  }
   updateEmployee(id:string,data:any):Observable<any>{
     return this.http.put(`${this.Employee_URL}/update/${id}`,data)
   }

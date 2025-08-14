@@ -22,6 +22,11 @@ export class DashboardComponent {
   ngOnInit(){
     localStorage.setItem('token','Active');
   }
+  gotodiet(){
+    this.router.navigate(['/diet'])
+
+  }
+
 
   goToLunch() {
     this.router.navigate(['/lunch'], {

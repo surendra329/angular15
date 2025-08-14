@@ -30,6 +30,7 @@ public loginObj = {
     this.loginObj.city = this.loginObj.city;
 
     this.service.addEmployee(this.loginObj).subscribe({
+      // data => console.log(data)
       next: (res) => {
         console.log(res);
         // this.toastr.success('Registered saved successfully!', 'Success');
@@ -41,7 +42,7 @@ public loginObj = {
 
         console.log(error);
       }
-    });
+  });
   }
 
 }

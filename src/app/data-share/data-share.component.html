@@ -1,0 +1,15 @@
+<p>data-share works!</p>
+<input type="text" [(ngModel)]="searchItem" />
+
+<p (click)="searchFun()">Click me </p>
+filterd
+<ul *ngIf="filteredItems.length">
+    <li *ngFor="let item of filteredItems"><i [ngStyle]="{color:'red'}"> {{item.name}} color</i></li>
+</ul>
+Non-filterd
+<ul *ngIf="nonRelatedItems.length">
+    <li *ngFor="let item of nonRelatedItems"><i [ngStyle]="{ color:item.color}"> {{item.name}} color</i></li>
+</ul>
+
+
+

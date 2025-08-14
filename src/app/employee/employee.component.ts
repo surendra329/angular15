@@ -11,9 +11,12 @@ export class EmployeeComponent {
 public employees: any[] = [];
 public searchTable:string = '';
   constructor(private service: AppService) {}
-
+  Employee : any = { name : '', email :'', mobile:'', city:''};
   ngOnInit(): void {
-    this.service.getEmployees().subscribe(data => {
+   this.getEmployeeList();
+  }
+  getEmployeeList(){
+     this.service.getEmployees().subscribe(data => {
       this.employees = data;
     });
   }
@@ -28,6 +31,8 @@ public searchTable:string = '';
       )
     );
   }
+  // 9581222220 // moghuls
+
   updateEmployee(record:any){
     console.log(record);
     // let name = record?.name;
@@ -42,6 +47,14 @@ public searchTable:string = '';
       // }).subscribe(res => {
       //   console.log('Update success', res);
       // });
+  }
+  updateEmployeetable(item:any){
+    this.Employee = {
+      name: item.name || '',
+      email: item.email || '',
+      mobile: item.mobile || '',
+      city: item.city || ''
+    };
   }
 
 }

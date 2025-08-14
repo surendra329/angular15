@@ -11,6 +11,10 @@ import { SnacksComponent } from './snacks/snacks.component';
 import { DinnerComponent } from './dinner/dinner.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { DataShareComponent } from './data-share/data-share.component';
+import { DietComponent } from './diet/diet.component';
+import { AdminComponent } from './admin/admin.component';
+
 const routes: Routes = [
   {
     path:'',redirectTo:'dashboard',pathMatch:'full'
@@ -45,12 +49,22 @@ const routes: Routes = [
       component:DinnerComponent,
       canActivate:[AuthServiceGuard]
     },{
+      path:'diet',
+      component:DietComponent,
+      canActivate:[AuthServiceGuard]
+    },{
       path:'404',
       component: PageNotFoundComponent
     },{
       path:'employee',
       component:EmployeeComponent,
       canActivate:[AuthServiceGuard]
+    },{
+      path:'share',
+      component:DataShareComponent
+    },{
+      path:'admin',
+      component:AdminComponent
     },
     {
       path:'**',

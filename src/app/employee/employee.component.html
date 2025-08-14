@@ -14,14 +14,24 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of filteredEmployees">
-      <td scope="row">{{ item.name }}</td>
+      <td scope="row">{{ item.name }} </td>
       <td scope="row">{{ item.mobile }}</td>
       <td scope="row">{{ item.city }}</td>
       <td scope="row">{{ item.email }}</td>
-      <td scope="row" (click)="updateEmployee(item)">Update</td>
+      <td scope="row" (click)="updateEmployeetable(item)">Update</td>
     </tr>
     </tbody>
   </table>
+  <div *ngIf="Employee">
+    <input type="text" [(ngModel)]="Employee.name" />
+    <input type="text" [(ngModel)]="Employee.mobile" />
+
+    <input type="text" [(ngModel)]="Employee.city" />
+
+    <input type="text" [(ngModel)]="Employee.email" />
+
+    <!-- <button (click)="updateEmployee()">Save</button> -->
+</div>
 <!-- <table class="table">
   <thead>
     <tr>

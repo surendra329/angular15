@@ -1,0 +1,62 @@
+<p>admin works!</p>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name : </label>
+      <input id="name" formControlName="name" type="text" />
+      <div *ngIf="registrationForm.get('name')?.errors?.['required'] && registrationForm.get('name')?.touched">
+        <small style="color:red;">Name is required.</small>
+      </div>
+      <div *ngIf="registrationForm.get('name')?.errors?.['minlength'] && registrationForm.get('name')?.touched">
+        <small style="color:red;">Name must be at least 3 characters long.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email : </label>
+      <input id="email" formControlName="email" type="email" />
+      <div *ngIf="registrationForm.get('email')?.errors?.['required'] && registrationForm.get('email')?.touched">
+        <small style="color:red;">Email is required.</small>
+      </div>
+      <div *ngIf="registrationForm.get('email')?.errors?.['email'] && registrationForm.get('email')?.touched">
+        <small style="color:red;">Email must be valid.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="age">Age : </label>
+      <input id="age" formControlName="age" type="number" />
+      <div *ngIf="registrationForm.get('age')?.errors?.['required'] && registrationForm.get('age')?.touched">
+        <small style="color:red;">Age is required.</small>
+      </div>
+      <div *ngIf="registrationForm.get('age')?.errors?.['ageInvalid'] && registrationForm.get('age')?.touched">
+        <small style="color:red;">Age must be between 18 and 100.</small>
+      </div>
+    </div>
+    <br />
+    <button type="submit">Submit</button>
+  </form> 
+
+
+  <table *ngIf="regForm.length">
+    <tr><th>Name </th> <th>Email</th> <th>Age</th> </tr>
+    <tr *ngFor="let fm of regForm">
+      <td >{{fm.name}}</td>
+      <td >{{fm.email}}</td>
+      <td >{{fm.age}}</td>
+    </tr>
+  </table>
+
+   <div class="container">
+    
+    <p>I am the color</p> 
+
+    <span>X</span> <br/>
+  
+    <span>Y</span>  <br/>
+  
+    <p>I am the color</p>
+    <span>X</span>  <br/>
+  
+    <a></a><span></span>
+  </div>
