@@ -8,8 +8,14 @@
   <input type="text" class="form-control" id="search" [(ngModel)]="searchTable" placeholder="Enter search">
 </div>
 
+
 <div class="col-lg-12 table-wrapper">
-  <p-table [value]="filteredEmployees">
+  <p-table 
+    [value]="filteredEmployees" 
+    [scrollable]="true" 
+    scrollHeight="400px">
+    
+    <!-- Table Header -->
     <ng-template pTemplate="header">
       <tr>
           <th >Name</th>

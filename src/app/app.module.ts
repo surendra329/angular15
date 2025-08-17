@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 
+import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LunchComponent } from './lunch/lunch.component';
@@ -58,7 +59,8 @@ import { AdminComponent } from './admin/admin.component';
     MatInputModule,
     ReactiveFormsModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    AutoCompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

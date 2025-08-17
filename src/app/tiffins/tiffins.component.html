@@ -1,19 +1,17 @@
 <div class="body">
    <h3>Tiffins List</h3>
 </div>
-<p-button label="Click Me" icon="pi pi-check"></p-button>
+<p-button label="Select Country" class="m-1" icon="pi pi-check"></p-button>
 
-<p-table [value]="products">
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-product>
-    <tr>
-      <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
-    </tr>
-  </ng-template>
-</p-table>
+<p-autoComplete  class="m-1" 
+  [(ngModel)]="selectedCountry" 
+  [suggestions]="filteredCountries" 
+  (completeMethod)="filterCountry($event)"
+  placeholder="Search Country"
+  [forceSelection]="true">
+</p-autoComplete>
+<div class="m-8">
+    
+</div>
+<p>Selected: {{ selectedCountry }}</p>
+
