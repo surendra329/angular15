@@ -1,0 +1,17 @@
+
+$extra-spacers: (
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem,
+  6: 4rem,
+  7: 5rem,
+  8: 6rem,
+  9: 8rem,
+  10: 10rem
+);
+
+@each $key, $value in $extra-spacers {
+  .p-#{$key} { padding: $value !important; }
+  .m-#{$key} { margin: $value !important; }
+}

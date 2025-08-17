@@ -8,9 +8,12 @@ export class AuthService {
 
   setUsername(name: string) {
     this.usernameSubject.next(name);
+    console.log('localStorage --',localStorage)
   }
 
   getUsername(): string {
+    console.log('localStorage --',localStorage)
+
     return this.usernameSubject.value;
   }
 }

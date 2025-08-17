@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-component',
   templateUrl: './app.component.html',
@@ -7,11 +9,13 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
  title = 'food delivery';
-  userLogin: string = localStorage.getItem('token') || 'Papa Rao';
+   isSidebarOpen = true;
 
-  constructor(private authService: AuthService) {}
+  userLogin: string = localStorage.getItem('token') || 'Papa Rao';
+  private localStorage: any = localStorage;
+  constructor(private authService: AuthService,private router:Router) {}
   ngOnInit(): void {
-    console.log('🚀 AppComponent initialized');
+    console.log('🚀 AppComponent initialized',localStorage);
     if (localStorage.getItem('token')) {
       this.userLogin = 'Papa Rao';
     }else {
@@ -29,6 +33,21 @@ export class AppComponent {
   }
   simulateLogin() {
     this.authService.setUsername('TestUser');
+  }
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
+
+  logOut(){
+      if(localStorage.getItem('token')) {
+      localStorage.removeItem('token');
+      this.authService.setUsername('Log Out');
+      this.localStorage.removeItem('userName');
+      this.localStorage.setItem('userName','Logout');
+      this.router.navigate(['./login']);
+      return;
+    }
   }
 }
 

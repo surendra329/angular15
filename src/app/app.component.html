@@ -54,6 +54,47 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Left Navbar -->
+    <div class="sidebar col-lg-2" [class.closed]="!isSidebarOpen">
+      <button class="toggle-btn" (click)="toggleSidebar()">
+        <span class="glyphicon" 
+              [ngClass]="{
+                'glyphicon-chevron-left': isSidebarOpen, 
+                'glyphicon-chevron-right': !isSidebarOpen
+              }">
+        </span>
+      </button>
+
+      <ul class="nav nav-pills nav-stacked" *ngIf="isSidebarOpen">
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li><a  routerLink="/snacks" href="#">Snacks</a></li>
+        <li><a routerLink="/tiffins" href="#">Tiffins</a></li>
+        <li><a routerLink="/lunch" href="#">Lunch</a></li>
+        <li><a routerLink="/employee" href="#">Employee Table</a></li>
+        <li><a (click)="logOut()" href="#">Log Out</a></li>
+
+
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content  col-lg-9" [class.full-width]="!isSidebarOpen">
+      <!-- <h1>Welcome</h1>
+      <p>This is the main content area.</p> -->
+         <router-outlet />  <!-- entire Application loads here  I.e Single page Architecture -->
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
 <!-- <h1>Welcome {{ userLogin || 'Guest' }}</h1>
 <button (click)="simulateLogin()">Simulate Login</button> -->
- <router-outlet />  <!-- entire Application loads here  I.e Single page Architecture -->

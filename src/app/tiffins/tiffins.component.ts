@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-tiffins',
   templateUrl: './tiffins.component.html',
-  styleUrls: ['./tiffins.component.css']
+  styleUrls: ['./tiffins.component.scss']
 })
 export class TiffinsComponent {
 

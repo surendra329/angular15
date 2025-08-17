@@ -25,6 +25,7 @@ constructor(private routes:Router,private authService:AuthService){}
     if(this.loginObj.name !== '' && this.loginObj.password !== ''){
         // alert('Please enter valid credentials');
         this.localStorage.setItem('token','Active');
+        this.localStorage.setItem('userName',this.loginObj?.name);
         this.authService.setUsername(this.loginObj.name);
         this.routes.navigate(['./dashboard']);
       }

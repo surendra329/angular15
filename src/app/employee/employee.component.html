@@ -1,3 +1,8 @@
+<div class="form-group form-group col-lg-3 col-sm-12 col-xs-12 pull-left">
+  <h3 for="search">Employee Table</h3>
+</div>
+
+
 <div class="form-group form-group col-lg-3 col-sm-12 col-xs-12 pull-right">
   <label for="search">Search:</label>
   <input type="text" class="form-control" id="search" [(ngModel)]="searchTable" placeholder="Enter search">
@@ -22,7 +27,7 @@
     </tr>
     </tbody>
   </table>
-  <div *ngIf="Employee">
+  <!-- <div *ngIf="Employee">
     <input type="text" [(ngModel)]="Employee.name" />
     <input type="text" [(ngModel)]="Employee.mobile" />
 
@@ -30,9 +35,10 @@
 
     <input type="text" [(ngModel)]="Employee.email" />
 
-    <!-- <button (click)="updateEmployee()">Save</button> -->
-</div>
+</div> -->
 <!-- <table class="table">
+    <button (click)="updateEmployee()">Save</button> 
+
   <thead>
     <tr>
       <th scope="col">#</th>

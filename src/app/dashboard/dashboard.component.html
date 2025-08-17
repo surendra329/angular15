@@ -1,4 +1,4 @@
-<button  class="btn btn-warning ml-92" >
+<!-- <button  class="btn btn-warning ml-92" >
     <a (click)="test()">Logout</a>
 </button>
 <div class="dashboard-layout">
@@ -6,11 +6,22 @@
         <a class="box box1" routerLink="/tiffins">Tiffins</a>
     </div>
     <div class="box box2"  >
-        <a (click)="goToLunch()">Lunch</a>
+        <a routerLink="/lunch" (click)="goToLunch()">Lunch</a>
     </div>
     <div class="box box3" routerLink="/snacks">Snacks</div>
     <div class="box box" routerLink="/404" [queryParams]="{ meal: 'non-veg', time: 'mid-night' }">Dinner</div>
     <div class="box box" (click)="test()"> Test</div>
     <div class="box box" routerLink="/employee" > Employee Table </div>
     <button>click me</button>
+</div> -->
+
+<div class="container mt-4" [@listAnimation]>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let card of cards">
+      <div class="card text-center shadow-sm mb-4 p-3">
+        <h5 class="card-title">{{ card.title }}</h5>
+        <p class="display-6 fw-bold">{{ card.value }}</p>
+      </div>
+    </div>
+  </div>
 </div>
