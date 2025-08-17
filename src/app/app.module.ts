@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TiffinsComponent } from './tiffins/tiffins.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +27,7 @@ import { MatInputModule } from '@angular/material/input';
 import { DataShareComponent } from './data-share/data-share.component';
 import { DietComponent } from './diet/diet.component';
 import { AdminComponent } from './admin/admin.component';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +56,9 @@ import { AdminComponent } from './admin/admin.component';
     MatSortModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    ButtonModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,51 +7,26 @@
   <label for="search">Search:</label>
   <input type="text" class="form-control" id="search" [(ngModel)]="searchTable" placeholder="Enter search">
 </div>
-<div class="table-wrapper col-lg-12">
-  <table class="table my-table">
-    <thead>
+
+<div class="col-lg-12 table-wrapper">
+  <p-table [value]="filteredEmployees">
+    <ng-template pTemplate="header">
       <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Mobile</th>
-        <th scope="col">City</th>
-        <th scope="col">Email</th>
+          <th >Name</th>
+          <th >Mobile</th>
+          <th >City</th>
+          <th >Email</th>
+          <th></th>
       </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of filteredEmployees">
-      <td scope="row">{{ item.name }} </td>
-      <td scope="row">{{ item.mobile }}</td>
-      <td scope="row">{{ item.city }}</td>
-      <td scope="row">{{ item.email }}</td>
-      <td scope="row" (click)="updateEmployeetable(item)">Update</td>
-    </tr>
-    </tbody>
-  </table>
-  <!-- <div *ngIf="Employee">
-    <input type="text" [(ngModel)]="Employee.name" />
-    <input type="text" [(ngModel)]="Employee.mobile" />
-
-    <input type="text" [(ngModel)]="Employee.city" />
-
-    <input type="text" [(ngModel)]="Employee.email" />
-
-</div> -->
-<!-- <table class="table">
-    <button (click)="updateEmployee()">Save</button> 
-
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr> -->
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td scope="row">{{ item.name }} </td>
+        <td scope="row">{{ item.mobile }}</td>
+        <td scope="row">{{ item.city }}</td>
+        <td scope="row">{{ item.email }}</td>
+        <td scope="row" (click)="updateEmployeetable(item)">Update</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>

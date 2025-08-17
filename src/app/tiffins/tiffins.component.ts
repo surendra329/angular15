@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./tiffins.component.scss']
 })
 export class TiffinsComponent {
-
+products : any = [{name:"Apple",price:100}];
 }

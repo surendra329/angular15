@@ -1,36 +1,19 @@
 <div class="body">
    <h3>Tiffins List</h3>
+</div>
+<p-button label="Click Me" icon="pi pi-check"></p-button>
 
-</div>
-<div class="row">
-    <div class="col-lg-4">
-        <div class="card" style="width: 18rem;">
-        <img src="../../assets/idly.jpg" class="card-img-top img-width" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="card m-24">
-        <img src="../../assets/idly.jpg" class="card-img-top img-width" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="card m-24">
-        <img src="../../assets/idly.jpg" class="card-img-top img-width" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-    </div>
-</div>
+<p-table [value]="products">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+    </tr>
+  </ng-template>
+</p-table>
