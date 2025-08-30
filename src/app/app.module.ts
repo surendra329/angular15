@@ -28,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { DataShareComponent } from './data-share/data-share.component';
 import { DietComponent } from './diet/diet.component';
 import { AdminComponent } from './admin/admin.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AdminComponent } from './admin/admin.component';
     EmployeeComponent,
     DataShareComponent,
     DietComponent,
-    AdminComponent
+    AdminComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

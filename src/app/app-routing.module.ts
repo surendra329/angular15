@@ -14,6 +14,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { DataShareComponent } from './data-share/data-share.component';
 import { DietComponent } from './diet/diet.component';
 import { AdminComponent } from './admin/admin.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,9 @@ const routes: Routes = [
     },{
       path:'admin',
       component:AdminComponent
+    },{
+      path:'map',
+      component:MapComponent
     },
     {
       path:'**',

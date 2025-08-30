@@ -1,0 +1,13 @@
+<div class="map-container">
+  <!-- Country Selector -->
+  <select [(ngModel)]="selectedCountry" (change)="showCountry()">
+    <option *ngFor="let c of countries" [value]="c.name">
+      {{ c.name }}
+    </option>
+  </select>
+
+  <!-- Map -->
+  <div id="map" style="height: 500px; margin-top: 10px;"></div>
+</div>
+
+
