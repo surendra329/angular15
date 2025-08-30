@@ -2,7 +2,13 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false"
+      >
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -14,10 +20,20 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li class="active">
+          <a href="#">Link <span class="sr-only">(current)</span></a>
+        </li>
         <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a
+            href="#"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Dropdown <span class="caret"></span
+          ></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -31,12 +47,12 @@
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Search" />
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <a class="nav-link glyphicon glyphicon-user user" NgIf="userLogin"></a>
-          <b  class="user text-primary"> {{userLogin}} </b>
+      <b class="user text-primary"> {{ userLogin }} </b>
       <!-- <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
         <li class="dropdown">
@@ -50,51 +66,61 @@
           </ul>
         </li>
       </ul> -->
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
 </nav>
-
 
 <div class="container-fluid">
   <div class="row">
-
     <!-- Left Navbar -->
     <div class="sidebar col-lg-2" [class.closed]="!isSidebarOpen">
       <button class="toggle-btn" (click)="toggleSidebar()">
-        <span class="glyphicon" 
-              [ngClass]="{
-                'glyphicon-chevron-left': isSidebarOpen, 
-                'glyphicon-chevron-right': !isSidebarOpen
-              }">
+        <span
+          class="glyphicon"
+          [ngClass]="{
+            'glyphicon-chevron-left': isSidebarOpen,
+            'glyphicon-chevron-right': !isSidebarOpen
+          }"
+        >
         </span>
       </button>
 
       <ul class="nav nav-pills nav-stacked" *ngIf="isSidebarOpen">
-        <li class="active"><a href="#">Dashboard</a></li>
-        <li><a  routerLink="/snacks" href="#">Snacks</a></li>
-        <li><a routerLink="/tiffins" href="#">Tiffins</a></li>
-        <li><a routerLink="/lunch" href="#">Lunch</a></li>
-        <li><a routerLink="/employee" href="#">Employee Table</a></li>
-        <li><a (click)="logOut()" href="#">Log Out</a></li>
-
-
+        <li
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/snacks">Snacks</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/tiffins">Tiffins</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/lunch">Lunch</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/employee">Employee Table</a>
+        </li>
+        <li>
+          <a (click)="logOut()">Log Out</a>
+        </li>
       </ul>
     </div>
 
     <!-- Main Content -->
-    <div class="main-content  col-lg-9" [class.full-width]="!isSidebarOpen">
+    <div class="main-content col-lg-9" [class.full-width]="!isSidebarOpen">
       <!-- <h1>Welcome</h1>
       <p>This is the main content area.</p> -->
-         <router-outlet />  <!-- entire Application loads here  I.e Single page Architecture -->
-
+      <router-outlet />
+      <!-- entire Application loads here  I.e Single page Architecture -->
     </div>
-
   </div>
 </div>
-
-
-
-
 
 <!-- <h1>Welcome {{ userLogin || 'Guest' }}</h1>
 <button (click)="simulateLogin()">Simulate Login</button> -->
