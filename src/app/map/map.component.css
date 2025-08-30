@@ -9,8 +9,34 @@
 }
 
 #map {
-  height: 500px;  /* fix height */
+  height: 470px !important;  /* fix height */
   width: 100%;    /* full width */
   border: 2px solid #ccc;
   border-radius: 8px;
 }
+
+.country-select {
+  width: 225px;              /* make dropdown wider */
+  padding: 5px 12px;        /* spacing inside */
+  border: 2px solid #4CAF50; /* green border */
+  border-radius: 8px;        /* rounded corners */
+  background-color: #fff;    /* white background */
+  font-size: 16px;           /* readable text */
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;               /* text color */
+  outline: none;             /* remove default focus */
+  appearance: none;          /* remove default arrow in some browsers */
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.country-select:hover {
+  border-color: #2e7d32;     /* darker green on hover */
+}
+
+.country-select:focus {
+  border-color: #1976d2;     /* blue focus border */
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.5);
+}
+
