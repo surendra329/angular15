@@ -56,7 +56,7 @@ const routes: Routes = [
       canActivate:[AuthServiceGuard]
     },{
       path:'404',
-      component: PageNotFoundComponent
+      component: BallgameComponent
     },{
       path:'employee',
       component:EmployeeComponent,
