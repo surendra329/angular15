@@ -15,6 +15,7 @@ import { DataShareComponent } from './data-share/data-share.component';
 import { DietComponent } from './diet/diet.component';
 import { AdminComponent } from './admin/admin.component';
 import { MapComponent } from './map/map.component';
+import { BallgameComponent } from './ballgame/ballgame.component';
 
 const routes: Routes = [
   {
@@ -69,6 +70,9 @@ const routes: Routes = [
     },{
       path:'map',
       component:MapComponent
+    },{
+      path:'game',
+      component:BallgameComponent
     },
     {
       path:'**',

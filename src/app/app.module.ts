@@ -29,6 +29,8 @@ import { DataShareComponent } from './data-share/data-share.component';
 import { DietComponent } from './diet/diet.component';
 import { AdminComponent } from './admin/admin.component';
 import { MapComponent } from './map/map.component';
+import { SportsCarCarouselComponent } from './sports-car-carousel/sports-car-carousel.component';
+import { BallgameComponent } from './ballgame/ballgame.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { MapComponent } from './map/map.component';
     DataShareComponent,
     DietComponent,
     AdminComponent,
-    MapComponent
+    MapComponent,
+    SportsCarCarouselComponent,
+    BallgameComponent
   ],
   imports: [
     BrowserModule,
